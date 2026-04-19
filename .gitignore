@@ -29,3 +29,6 @@ dist-ssr
 
 backup/
 .env
+
+# GLB models - actual model is in character.enc
+*.glb
