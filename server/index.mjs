@@ -53,10 +53,10 @@ function renderEmailShell({ title, subtitle, rows, footerNote }) {
       return `
         <tr>
           <td style="padding: 14px 16px; border-top: 1px solid #f1eee7;">
-            <div style="font: 700 11px/1.2 Arial, Helvetica, sans-serif; letter-spacing: .12em; text-transform: uppercase; color:#6b7280;">
+            <div style="font: 700 11px/1.2 Arial, Helvetica, sans-serif; letter-spacing: .12em; text-transform: uppercase; color:#a0a0a0;">
               ${safeLabel}
             </div>
-            <div style="margin-top: 6px; font: 400 14px/1.65 Arial, Helvetica, sans-serif; color:#111827;">
+            <div style="margin-top: 6px; font: 400 14px/1.65 Arial, Helvetica, sans-serif; color:#ffffff;">
               ${value}
             </div>
           </td>
@@ -68,7 +68,7 @@ function renderEmailShell({ title, subtitle, rows, footerNote }) {
   const rowsPanel = renderedRows
     ? `<tr>
               <td style="padding: 14px 18px 6px;">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate; border-spacing:0; background:#ffffff; border:1px solid #f1eee7; border-radius:14px; overflow:hidden;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate; border-spacing:0; background:#000000; border:1px solid #f1eee7; border-radius:14px; overflow:hidden;">
                   ${renderedRows}
                 </table>
               </td>
@@ -86,7 +86,7 @@ function renderEmailShell({ title, subtitle, rows, footerNote }) {
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse; background:#f6f5f2;">
       <tr>
         <td align="center" style="padding: 34px 12px;">
-          <table role="presentation" width="640" cellspacing="0" cellpadding="0" style="border-collapse:separate; border-spacing:0; width:640px; max-width:100%; background:#ffffff; border:1px solid #e7e2d8; border-radius:16px; overflow:hidden; box-shadow: 0 18px 45px rgba(0,0,0,0.16);">
+          <table role="presentation" width="640" cellspacing="0" cellpadding="0" style="border-collapse:separate; border-spacing:0; width:640px; max-width:100%; background:#000000; border:1px solid #e7e2d8; border-radius:16px; overflow:hidden; box-shadow: 0 18px 45px rgba(0,0,0,0.16);">
             <tr>
               <td style="padding: 0; background:#000000;">
                 <div style="height: 4px; background: linear-gradient(90deg, #b8952a 0%, #e8c96a 52%, #b8952a 100%);"></div>
