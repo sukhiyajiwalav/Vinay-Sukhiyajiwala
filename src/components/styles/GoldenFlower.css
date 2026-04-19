@@ -1,0 +1,115 @@
+.golden-flower-img {
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  transform-origin: 50% 55%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ── UI variants (use with className on <GoldenFlower />) ── */
+.golden-flower--nav {
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
+.navbar-brand:hover .golden-flower--nav {
+  opacity: 1;
+}
+
+.golden-flower--hero {
+  opacity: 0.88;
+}
+
+.golden-flower--section {
+  opacity: 0.85;
+}
+
+.golden-flower--on-dark {
+  opacity: 0.92;
+  filter: brightness(1.06) saturate(1.05);
+}
+
+.golden-flower--sketch {
+  opacity: 0.8;
+}
+
+/* Works / gallery: breathing room before grid */
+.work-shop-motif {
+  display: flex;
+  justify-content: flex-start;
+  margin: clamp(18px, 3vw, 26px) 0 0;
+}
+
+/* Shared vertical stack for section ornaments */
+.section-flowers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2.2vw, 22px);
+}
+
+/* Motion only on decorative section clusters */
+@media (prefers-reduced-motion: no-preference) {
+  .section-flowers .golden-flower-img {
+    animation: golden-flower-float 8s ease-in-out infinite;
+  }
+
+  .section-flowers .golden-flower-img:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .section-flowers .golden-flower-img:nth-child(2) {
+    animation-delay: -2.6s;
+  }
+
+  .section-flowers .golden-flower-img:nth-child(3) {
+    animation-delay: -5.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-flowers .golden-flower-img {
+    animation: none;
+  }
+}
+
+/* Horizontal row (verse strip) — same slow float + stagger as vertical clusters */
+@media (prefers-reduced-motion: no-preference) {
+  .verse-quote-strip-flowers .golden-flower-img {
+    animation: golden-flower-float 8s ease-in-out infinite;
+  }
+
+  .verse-quote-strip-flowers .golden-flower-img:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .verse-quote-strip-flowers .golden-flower-img:nth-child(2) {
+    animation-delay: -2.6s;
+  }
+
+  .verse-quote-strip-flowers .golden-flower-img:nth-child(3) {
+    animation-delay: -5.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verse-quote-strip-flowers .golden-flower-img {
+    animation: none;
+  }
+}
+
+@keyframes golden-flower-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2.5deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(2.5deg) scale(1.05);
+  }
+}

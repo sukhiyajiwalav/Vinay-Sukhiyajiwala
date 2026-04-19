@@ -1,0 +1,489 @@
+/* /biography — title bar, hero + quote, letter, practice, artist statement, biography, portfolio, books */
+
+.biography-page {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--textPrimary);
+  padding-top: clamp(72px, 11vw, 96px);
+  padding-bottom: 0;
+}
+
+/* ── Thin top bar — cream, centered title ── */
+.biography-page-titlebar {
+  background: #f7f7f2;
+  text-align: center;
+  padding: clamp(16px, 3vw, 22px) clamp(20px, 4vw, 32px);
+  margin: 0;
+  border: none;
+}
+
+.biography-page-titlebar-heading {
+  margin: 0;
+  font-family: var(--fontBody);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #0a0a0a;
+}
+
+/* ── Full-bleed hero + floating quote card ── */
+.biography-page-hero {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  min-height: min(58vh, 560px);
+  background: #1a1410;
+}
+
+.biography-page-hero-img {
+  width: 100%;
+  height: min(58vh, 560px);
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+
+.biography-page-hero-fallback {
+  width: 100%;
+  height: min(58vh, 560px);
+  background: linear-gradient(160deg, #2a2420 0%, #1a1410 100%);
+}
+
+.biography-page-hero-quote {
+  position: absolute;
+  left: clamp(16px, 4vw, 48px);
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: min(100% - 32px, 420px);
+  padding: clamp(22px, 4vw, 36px);
+  background: #faf8f3;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(26, 20, 16, 0.22),
+    0 2px 8px rgba(26, 20, 16, 0.08);
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+.biography-page-hero-quote-text {
+  margin: 0;
+  font-family: var(--fontBody);
+  font-size: clamp(0.97rem, 1.85vw, 1.08rem);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.5;
+  color: #141210;
+  text-align: center;
+}
+
+.biography-page-highlight {
+  background: var(--highlightGold);
+  color: #141210;
+  font-weight: 600;
+  padding: 0 0.12em;
+  border-radius: 2px;
+}
+
+.biography-page-hero-rule {
+  border: none;
+  border-top: 1px solid rgba(26, 20, 16, 0.12);
+  margin: clamp(1rem, 2.5vw, 1.25rem) 0 clamp(0.65rem, 1.5vw, 0.85rem);
+}
+
+.biography-page-hero-attrib {
+  margin: 0;
+  font-family: var(--fontBody);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--textSecondary);
+  text-align: center;
+}
+
+/* ── Letter-style column — opening paras justified; closing lines right ── */
+.biography-page-letter {
+  background: #ffffff;
+  padding: clamp(40px, 7vw, 72px) 0 clamp(28px, 5vw, 48px);
+}
+
+.biography-page-letter-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.biography-page-letter-inner p {
+  margin: 0 0 clamp(1.25rem, 2.2vw, 1.65rem);
+  font-family: var(--fontBody);
+  font-size: clamp(1rem, 1.85vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a1410;
+}
+
+/* Biography opening (two paragraphs): full justification */
+.biography-page-letter-inner > p:nth-child(1),
+.biography-page-letter-inner > p:nth-child(2) {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 2;
+}
+
+.biography-page-letter-close {
+  margin-top: clamp(1.75rem, 3vw, 2.25rem) !important;
+  margin-bottom: 0.35rem !important;
+  font-style: italic;
+  text-align: right;
+}
+
+.biography-page-signature {
+  font-family: "Segoe Script", "Brush Script MT", "Apple Chancery", cursive;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--textPrimary);
+  margin: 0 !important;
+  text-align: right;
+}
+
+/* ── Artist statement — centered ── */
+.biography-page-pro {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 72px) clamp(20px, 4vw, 32px) clamp(28px, 5vw, 48px);
+  text-align: center;
+}
+
+.biography-page-pro-title {
+  font-family: var(--fontBody);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0a0a0a;
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.biography-page-pro p {
+  margin: 0 0 clamp(1.15rem, 2vw, 1.45rem);
+  font-family: var(--fontBody);
+  font-size: clamp(0.98rem, 1.9vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2a2a;
+}
+
+.biography-page-pro p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Long biography — heading full width; text left + portrait right (wide) ── */
+.biography-page-long {
+  padding: clamp(32px, 6vw, 56px) 0 clamp(48px, 8vw, 80px);
+  border-top: 1px solid var(--borderWarm);
+}
+
+.biography-page-long-title {
+  font-family: var(--fontHeading);
+  font-size: clamp(1.35rem, 2.6vw, 1.65rem);
+  font-weight: 600;
+  color: var(--textPrimary);
+  margin: 0 0 clamp(1.25rem, 2.2vw, 1.65rem);
+  width: 100%;
+}
+
+.biography-page-long-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 5vw, 44px);
+  align-items: start;
+}
+
+.biography-page-long-copy {
+  min-width: 0;
+}
+
+.biography-page-long-para {
+  margin: 0 0 clamp(1.1rem, 2vw, 1.35rem);
+  font-family: var(--fontBody);
+  font-size: clamp(0.97rem, 1.2vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--textPrimary);
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.biography-page-long-para:last-child {
+  margin-bottom: 0;
+}
+
+.biography-page-long-photo {
+  position: relative;
+  width: min(100%, 240px);
+  margin-inline: auto;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--backgroundMuted);
+  border-radius: clamp(12px, 1.8vw, 18px);
+}
+
+.biography-page-long-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+@media only screen and (min-width: 900px) {
+  .biography-page-long-layout {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(36px, 5.5vw, 68px);
+    row-gap: clamp(24px, 4vw, 36px);
+    align-items: start;
+  }
+
+  .biography-page-long-photo {
+    width: clamp(200px, 22vw, 280px);
+    max-width: none;
+    margin-inline: 0;
+    justify-self: end;
+  }
+}
+
+/* ── Portfolio — Takhleeq & Sketches → full painting grids ── */
+.biography-page-portfolio {
+  background: #fafaf7;
+  border-top: 1px solid var(--borderWarm);
+  padding: clamp(48px, 8vw, 88px) 0 clamp(64px, 10vw, 100px);
+}
+
+.biography-page-portfolio-inner {
+  max-width: 1100px;
+}
+
+.biography-page-portfolio-heading {
+  font-family: var(--fontBody);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--textSecondary);
+  margin: 0 0 clamp(28px, 4vw, 40px);
+}
+
+.biography-page-portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(22px, 3.5vw, 32px);
+}
+
+@media only screen and (min-width: 720px) {
+  .biography-page-portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.biography-portfolio-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 20, 16, 0.08);
+  box-shadow: 0 6px 28px rgba(26, 20, 16, 0.07);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.biography-portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(26, 20, 16, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biography-portfolio-card {
+    transition: box-shadow 0.28s ease;
+  }
+
+  .biography-portfolio-card:hover {
+    transform: none;
+  }
+}
+
+/* Portfolio row — Art Gallery hub covers (left column); Books card uses .biography-portfolio-card-media--book */
+.biography-portfolio-card-media {
+  position: relative;
+  min-height: 140px;
+  overflow: hidden;
+  background: var(--backgroundMuted);
+  aspect-ratio: 3 / 4;
+}
+
+.biography-portfolio-card-media--book {
+  aspect-ratio: 2 / 3;
+}
+
+.biography-portfolio-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.biography-portfolio-card-copy {
+  padding: clamp(20px, 3.2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.biography-portfolio-card-title {
+  font-family: var(--fontBody);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #0a0a0a;
+  line-height: 1.25;
+}
+
+.biography-portfolio-card-hi {
+  font-family: var(--fontIndic);
+  font-weight: 600;
+  color: var(--accentColor);
+  font-size: 0.92em;
+}
+
+.biography-portfolio-card-desc {
+  font-family: var(--fontBody);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4a4540;
+  margin: 0 0 14px;
+}
+
+.biography-portfolio-card-cta {
+  font-family: var(--fontBody);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.biography-portfolio-card:hover .biography-portfolio-card-cta {
+  color: var(--textPrimary);
+}
+
+.biography-portfolio-card-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.biography-portfolio-card:hover .biography-portfolio-card-arrow {
+  transform: translateX(4px);
+}
+
+@media only screen and (max-width: 520px) {
+  .biography-portfolio-card {
+    grid-template-columns: 1fr;
+  }
+
+  .biography-portfolio-card-media {
+    aspect-ratio: 16 / 10;
+    min-height: 120px;
+    max-height: 220px;
+  }
+
+  .biography-portfolio-card-media--book {
+    aspect-ratio: 16 / 10;
+    max-height: 240px;
+  }
+}
+
+.biography-page-portfolio-hub {
+  margin: clamp(28px, 4vw, 40px) 0 0;
+  text-align: left;
+}
+
+.biography-page-portfolio-hub-link {
+  font-family: var(--fontBody);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--textPrimary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.biography-page-portfolio-hub-link:hover {
+  color: var(--accentColor);
+}
+
+.biography-page-portfolio-hub-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(26, 20, 16, 0.35);
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* ── Books — same card pattern as Portfolio; single amber card → /book ── */
+.biography-page-books.biography-page-portfolio {
+  padding-top: clamp(40px, 6vw, 64px);
+  padding-bottom: clamp(64px, 10vw, 100px);
+}
+
+.biography-page-books-grid {
+  grid-template-columns: 1fr;
+  max-width: min(100%, 560px);
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .biography-page-hero {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .biography-page-hero-img,
+  .biography-page-hero-fallback {
+    height: min(48vh, 420px);
+  }
+
+  .biography-page-hero-quote {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    max-width: none;
+    margin: clamp(-24px, -4vw, -16px) clamp(16px, 4vw, 24px) 0;
+    border-radius: 14px;
+  }
+}
+

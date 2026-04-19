@@ -1,0 +1,188 @@
+/* ── Hero: full-viewport portrait + bold name + role; darker scrim for face clarity ── */
+
+.landing-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  position: relative;
+  min-height: var(--vh);
+  background: #050504;
+}
+
+.landing-hero--fullbleed {
+  position: relative;
+  min-height: var(--vh);
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  --hero-name: #f7f3eb;
+  --hero-eyebrow: rgba(247, 243, 235, 0.88);
+  /* Stronger black wash — photo reads a little darker, face stays readable */
+  --hero-scrim-base: rgba(0, 0, 0, 0.42);
+  --hero-scrim-mid: rgba(0, 0, 0, 0.28);
+  --hero-scrim-vignette: rgba(0, 0, 0, 0.72);
+}
+
+/* Background layer — crop keeps face centred on small + large screens */
+.landing-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  min-height: var(--vh);
+  overflow: hidden;
+  background: #0a0908;
+}
+
+.landing-hero-photo-img {
+  width: 100%;
+  height: 100%;
+  min-height: var(--vh);
+  object-fit: cover;
+  /*
+   * Anchor the crop so the face stays fully in frame: slightly above center on
+   * desktop (wide frame); higher in the image on tall phones (more headroom).
+   */
+  object-position: 50% 32%;
+  display: block;
+}
+
+.landing-hero-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.58) 0%,
+      var(--hero-scrim-mid) 38%,
+      var(--hero-scrim-base) 55%,
+      var(--hero-scrim-vignette) 100%
+    ),
+    radial-gradient(
+      ellipse 110% 90% at 50% 28%,
+      transparent 0%,
+      rgba(0, 0, 0, 0.42) 100%
+    );
+}
+
+/* Foreground content — centred */
+.landing-hero-content {
+  position: relative;
+  z-index: 2;
+  min-height: var(--vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(100px, 14vh, 140px) clamp(20px, 5vw, 48px)
+    clamp(40px, 8vh, 72px);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Full name — bold caps (explicit weight so global h1 { 300 } / SplitText lines don’t thin it) */
+.landing-hero-name {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fontBody);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  line-height: 1.02;
+}
+
+.landing-hero-name .landing-line-inner {
+  font-weight: 700;
+}
+
+.landing-hero-name-line {
+  display: block;
+  font-size: clamp(2.35rem, 8.5vw, 5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--hero-name);
+  text-shadow: 0 3px 32px rgba(0, 0, 0, 0.55);
+}
+
+.landing-hero-name-line + .landing-hero-name-line {
+  margin-top: 0.04em;
+}
+
+/* Small line under name — tight, high impact */
+.landing-hero-role {
+  font-family: var(--fontBody);
+  font-size: clamp(0.65rem, 1.85vw, 0.8125rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--hero-eyebrow);
+  margin: clamp(14px, 2.2vw, 22px) 0 0;
+  line-height: 1.45;
+  max-width: 26em;
+}
+
+.landing-hero-motif {
+  margin: clamp(14px, 2.5vw, 22px) 0 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.landing-hero-motif .golden-flower--hero {
+  opacity: 0.95;
+  filter: brightness(1.12) saturate(1.08)
+    drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4));
+}
+
+.landing-hero-rule {
+  width: 56px;
+  height: 1px;
+  margin: clamp(18px, 3vw, 28px) auto clamp(14px, 2.5vw, 22px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accentColor),
+    transparent
+  );
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Tablet / small laptop: a bit higher in frame so chin isn’t clipped */
+@media screen and (max-width: 900px) {
+  .landing-hero-photo-img {
+    object-position: 50% 26%;
+  }
+
+  .landing-hero-name-line {
+    font-size: clamp(1.85rem, 10vw, 3.1rem);
+  }
+}
+
+/* Phone — tall viewport: prioritize upper third where faces usually sit */
+@media screen and (max-width: 600px) {
+  .landing-hero-photo-img {
+    object-position: 50% 20%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .landing-hero-photo-img {
+    object-position: 50% 18%;
+  }
+}
+
+/* Short wide phones (landscape) */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .landing-hero-photo-img {
+    object-position: 50% 35%;
+  }
+}
+
+/* Large desktop: subtle shift for wider aspect */
+@media screen and (min-width: 1400px) {
+  .landing-hero-photo-img {
+    object-position: 50% 34%;
+  }
+}

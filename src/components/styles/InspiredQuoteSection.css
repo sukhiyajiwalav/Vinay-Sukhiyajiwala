@@ -1,0 +1,121 @@
+/* Inspired quote — tight leading (line-height: 1), editorial drama */
+
+.inspired-quote-section {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: clamp(40px, 7vw, 72px) 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(
+    118deg,
+    #1c1814 0%,
+    #2a231c 42%,
+    #1a1612 100%
+  );
+  color: #f3efe6;
+}
+
+.inspired-quote-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background: radial-gradient(
+    ellipse 80% 55% at 70% 20%,
+    rgba(184, 149, 42, 0.14) 0%,
+    transparent 55%
+  );
+}
+
+.inspired-quote-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 32px);
+  padding-right: clamp(20px, 4vw, 32px);
+}
+
+.inspired-quote-block {
+  margin: 0;
+  padding: 0 0 0 clamp(8px, 2vw, 20px);
+  border: none;
+  position: relative;
+}
+
+.inspired-quote-mark {
+  position: absolute;
+  left: clamp(-6px, -1vw, 0px);
+  top: clamp(-28px, -4vw, -12px);
+  font-family: var(--fontHeading);
+  font-size: clamp(4.5rem, 18vw, 7rem);
+  line-height: 1;
+  color: var(--accentColor);
+  opacity: 0.14;
+  pointer-events: none;
+  user-select: none;
+}
+
+.inspired-quote-body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Zero extra line spacing: each line sits flush (line-height 1, no margins) */
+.inspired-quote-line {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fontArtist);
+  font-size: clamp(1.35rem, 3.8vw, 1.95rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: rgba(250, 247, 240, 0.96);
+  text-wrap: balance;
+}
+
+.inspired-quote-line + .inspired-quote-line {
+  margin-top: 0;
+}
+
+.inspired-quote-attribution {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.35em;
+  margin: clamp(18px, 3.5vw, 26px) 0 0;
+  padding: 0;
+  font-family: var(--fontBody);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(184, 149, 42, 0.95);
+}
+
+.inspired-quote-dash {
+  opacity: 0.65;
+  margin-right: 0.15em;
+}
+
+.inspired-quote-cite {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inspired-quote-note {
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: none;
+  color: rgba(243, 239, 230, 0.45);
+  font-size: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspired-quote-section {
+    background: #1c1814;
+  }
+}

@@ -1,0 +1,73 @@
+.sketches-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  padding: clamp(56px, 10vw, 96px) 0;
+}
+
+.sketches-inner {
+  width: 100%;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sketches-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.sketches-title {
+  font-family: var(--fontHeading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--textPrimary);
+  margin: 0;
+}
+
+.sketches-lead {
+  font-family: var(--fontBody);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--textSecondary);
+  margin: 0;
+}
+
+.sketches-motif {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(18px, 3vw, 26px);
+}
+
+/* Below works grid on /gallery */
+.sketches-section--embedded {
+  margin-top: clamp(40px, 8vw, 72px);
+  padding-top: clamp(40px, 7vw, 64px);
+  padding-bottom: clamp(32px, 6vw, 56px);
+  border-top: 1px solid var(--borderWarm);
+}
+
+.sketches-section--embedded .sketches-inner {
+  max-width: 42rem;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: left;
+}
+
+.sketches-section--embedded .sketches-title-row {
+  justify-content: flex-start;
+}
+
+.sketches-section--embedded .sketches-motif {
+  justify-content: flex-start;
+}

@@ -1,0 +1,317 @@
+/* The Practice — editorial layout (GSAP uses .whatIDO) */
+.whatIDO.practice-section {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: auto;
+  height: auto;
+  padding: clamp(72px, 12vw, 120px) 0 clamp(88px, 14vw, 140px);
+  box-sizing: border-box;
+  background: var(--backgroundColor);
+}
+
+/* Inside Biography page — editorial band, centered header, calmer cards */
+.whatIDO.practice-section--embedded {
+  max-width: none;
+  margin: 0;
+  padding: clamp(48px, 8vw, 88px) clamp(18px, 4vw, 28px);
+  background: linear-gradient(180deg, #fafaf7 0%, #f4f0e8 100%);
+  border-top: 1px solid var(--borderWarm);
+  border-bottom: 1px solid rgba(232, 226, 216, 0.9);
+  z-index: auto;
+}
+
+.practice-section--embedded .practice-wrap--embedded {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.practice-section--embedded .practice-header {
+  margin-bottom: clamp(36px, 5.5vw, 52px);
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.practice-section--embedded .practice-kicker {
+  color: var(--accentColor);
+  letter-spacing: 0.32em;
+  margin-bottom: 14px;
+}
+
+.practice-section--embedded .practice-title-block {
+  margin-bottom: clamp(18px, 2.5vw, 24px);
+}
+
+.practice-section--embedded .practice-title {
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  margin: 0;
+}
+
+.practice-section--embedded .practice-lead {
+  margin: 0 auto;
+  max-width: 34em;
+  font-size: clamp(0.98rem, 1.85vw, 1.08rem);
+  line-height: 1.68;
+  color: var(--textSecondary);
+}
+
+.practice-section--embedded .practice-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 22px);
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.practice-section--embedded .practice-card {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  padding: clamp(20px, 3vw, 26px);
+  border-radius: 14px;
+  border: 1px solid rgba(232, 226, 216, 0.95);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 22px rgba(26, 20, 16, 0.06);
+}
+
+.practice-section--embedded .practice-card::before {
+  display: none;
+}
+
+.practice-section--embedded .practice-card {
+  border-top: 3px solid var(--accentColor);
+}
+
+.practice-section--embedded .practice-index {
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  opacity: 0.35;
+  align-self: flex-start;
+}
+
+.practice-section--embedded .practice-card-body {
+  max-width: none;
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 700px) {
+  .practice-section--embedded .practice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.practice-wrap {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* —— Header —— */
+.practice-header {
+  max-width: 42rem;
+  margin-bottom: clamp(48px, 8vw, 72px);
+}
+
+.practice-kicker {
+  font-family: var(--fontBody);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  margin: 0 0 16px;
+}
+
+/* Title block centered; spacing to lead below */
+.practice-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.practice-title {
+  font-family: var(--fontHeading);
+  font-size: clamp(2.75rem, 6.5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--textPrimary);
+  margin: 0;
+  text-align: center;
+}
+
+.practice-title-accent {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accentBright);
+}
+
+.practice-lead {
+  font-family: var(--fontBody);
+  font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--textSecondary);
+  margin: 0;
+  max-width: 38em;
+}
+
+.practice-lead em {
+  font-style: italic;
+  color: var(--accentBright);
+}
+
+/* —— Grid —— */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 28px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cards: light gallery surface — readable body text, no heavy dark gradients */
+.practice-card {
+  position: relative;
+  display: flex;
+  gap: clamp(16px, 2.5vw, 24px);
+  padding: clamp(24px, 3.5vw, 32px) clamp(20px, 3vw, 28px);
+  border: 1px solid var(--borderWarm);
+  border-radius: 2px;
+  background: var(--wallWhite);
+  box-shadow: 0 1px 2px rgba(26, 20, 16, 0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.practice-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: clamp(20px, 3vw, 28px);
+  bottom: clamp(20px, 3vw, 28px);
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(
+    180deg,
+    var(--accentColor),
+    color-mix(in srgb, var(--accentColor) 45%, var(--backgroundMuted))
+  );
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.practice-card:hover {
+  border-color: color-mix(in srgb, var(--accentColor) 28%, var(--borderWarm));
+  box-shadow: 0 12px 36px rgba(26, 20, 16, 0.08);
+  transform: translateY(-3px);
+}
+
+.practice-card:hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-card {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .practice-card:hover {
+    transform: none;
+  }
+}
+
+.practice-index {
+  flex-shrink: 0;
+  align-self: flex-start;
+  font-family: var(--fontHeading);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--accentColor);
+  opacity: 0.45;
+  user-select: none;
+  min-width: 2.25ch;
+  font-variant-numeric: tabular-nums;
+}
+
+.practice-card-inner {
+  min-width: 0;
+}
+
+.practice-card-title {
+  font-family: var(--fontHeading);
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--textPrimary);
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.practice-card-subtitle {
+  font-family: var(--fontBody);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accentColor);
+  margin: 0 0 12px;
+}
+
+.practice-card-body {
+  font-family: var(--fontBody);
+  font-size: clamp(0.9375rem, 1.45vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--textPrimary);
+  margin: 0;
+  max-width: 38ch;
+  opacity: 0.82;
+}
+
+@media only screen and (max-width: 900px) {
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .practice-index {
+    margin-top: 4px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .whatIDO.practice-section {
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+
+  .whatIDO.practice-section--embedded {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .practice-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .practice-index {
+    margin-top: 0;
+    font-size: 1.75rem;
+    opacity: 0.5;
+  }
+}

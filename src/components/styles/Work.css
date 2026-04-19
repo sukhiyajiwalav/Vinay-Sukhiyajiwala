@@ -1,0 +1,147 @@
+/* ── Works section shell + shop header (grid/cards in PaintingShop.css) ── */
+
+.work-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  padding: clamp(72px, 12vw, 120px) 0;
+  overflow: visible;
+}
+
+.work-container {
+  margin: auto;
+}
+
+.work-shop-header {
+  margin-bottom: clamp(40px, 6vw, 64px);
+  text-align: left;
+  max-width: 42rem;
+}
+
+.work-shop-heading {
+  font-family: var(--fontHeading);
+  font-size: clamp(2.25rem, 6vw, 60px);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--textPrimary);
+  margin: 0;
+  line-height: 1.05;
+}
+
+.work-shop-series {
+  font-family: var(--fontBody);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--textSecondary);
+  margin: 16px 0 0;
+}
+
+.work-shop-epigraph {
+  font-family: var(--fontHeading);
+  font-size: clamp(1.02rem, 2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--textSecondary);
+  margin: clamp(20px, 3vw, 28px) 0 0;
+}
+
+.work-shop-epigraph-line {
+  display: block;
+}
+
+.work-shop-epigraph-line + .work-shop-epigraph-line {
+  margin-top: 0.25em;
+}
+
+/* ── Shared WorkImage (detail pages, etc.) ── */
+.work-image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.work-image-in {
+  position: relative;
+}
+
+.work-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--backgroundColor);
+  width: 50px;
+  border-radius: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  box-shadow: 0 4px 16px rgba(28, 25, 22, 0.12);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.work-image a:hover {
+  color: inherit;
+}
+
+.work-image a:hover .work-link {
+  opacity: 1;
+}
+
+.work-image video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--backgroundMuted);
+  object-fit: cover;
+}
+
+.work-image-framed {
+  padding: 8px;
+  background: var(--wallWhite);
+  border: 1px solid var(--borderWarm);
+  box-shadow: 0 10px 26px rgba(28, 25, 22, 0.07);
+  border-radius: 2px;
+}
+
+.work-image img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 2px;
+  display: block;
+}
+
+.painting-placeholder {
+  min-width: 220px;
+  min-height: 220px;
+  max-width: 100%;
+  max-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    160deg,
+    rgba(243, 239, 232, 0.95) 0%,
+    rgba(230, 226, 218, 0.98) 100%
+  );
+  border: 1px dashed rgba(28, 25, 22, 0.15);
+  border-radius: 2px;
+}
+
+.painting-placeholder-label {
+  font-family: var(--fontBody);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--textSecondary);
+}
+
+.work-link-icon {
+  font-size: 22px;
+  line-height: 1;
+}

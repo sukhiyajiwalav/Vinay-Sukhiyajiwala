@@ -1,0 +1,171 @@
+/* Vinay's Gallery — three-up preview, hover: title in gold (bottom-left) */
+
+.vinay-gallery-section {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid var(--borderWarm);
+}
+
+.vinay-gallery-inner {
+  padding: clamp(56px, 9vw, 96px) 0;
+  box-sizing: border-box;
+}
+
+.vinay-gallery-heading {
+  font-family: var(--fontBody);
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 clamp(36px, 6vw, 52px);
+}
+
+.vinay-gallery-heading-lead {
+  color: var(--textPrimary);
+}
+
+.vinay-gallery-heading-accent {
+  color: var(--accentColor);
+}
+
+.vinay-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2.5vw, 22px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vinay-gallery-card {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin-inline: auto;
+  text-decoration: none;
+  color: inherit;
+  border-radius: clamp(12px, 2vw, 18px);
+  overflow: hidden;
+  outline: none;
+  box-shadow: 0 2px 16px rgba(26, 20, 16, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vinay-gallery-card:hover,
+.vinay-gallery-card:focus-visible {
+  box-shadow: 0 12px 36px rgba(26, 20, 16, 0.12);
+  transform: translateY(-2px);
+}
+
+.vinay-gallery-card:focus-visible {
+  outline: 2px solid var(--accentColor);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vinay-gallery-card {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .vinay-gallery-card:hover,
+  .vinay-gallery-card:focus-visible {
+    transform: none;
+  }
+}
+
+/* Portrait tiles — width:height = 3:4 (CSS aspect-ratio = width / height) */
+.vinay-gallery-card-media {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  background: var(--backgroundMuted);
+  overflow: hidden;
+}
+
+.vinay-gallery-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.vinay-gallery-card:hover .vinay-gallery-card-img,
+.vinay-gallery-card:focus-within .vinay-gallery-card-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vinay-gallery-card-img {
+    transition: none;
+  }
+
+  .vinay-gallery-card:hover .vinay-gallery-card-img,
+  .vinay-gallery-card:focus-within .vinay-gallery-card-img {
+    transform: none;
+  }
+}
+
+.vinay-gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: clamp(14px, 2.5vw, 22px);
+  background: linear-gradient(
+    185deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(10, 8, 6, 0.55) 72%,
+    rgba(8, 6, 5, 0.82) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.vinay-gallery-card:hover .vinay-gallery-card-overlay,
+.vinay-gallery-card:focus-within .vinay-gallery-card-overlay {
+  opacity: 1;
+}
+
+.vinay-gallery-card-title {
+  font-family: var(--fontHeading);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--accentColor);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
+.vinay-gallery-card-sub {
+  font-family: var(--fontBody);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 247, 0.88);
+  margin-top: 0.35em;
+}
+
+.vinay-gallery-grid-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .vinay-gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
