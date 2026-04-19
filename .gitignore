@@ -30,5 +30,5 @@ dist-ssr
 backup/
 .env
 
-# GLB models - actual model is in character.enc
+# GLB models (LFS pointer files - actual model is character.enc)
 *.glb

@@ -3,6 +3,8 @@ import cors from "cors";
 import express from "express";
 import nodemailer from "nodemailer";
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 dotenv.config({ path: new URL("./.env", import.meta.url) });
 
@@ -298,7 +300,17 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-const HOST = process.env.HOST ?? "127.0.0.1";
+// Serve built frontend in production
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distPath = path.join(__dirname, "../dist");
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get("*", (_req, res) => {
+    res.sendFile(path.join(distPath, "index.html"));
+  });
+}
+
+const HOST = process.env.HOST ?? "0.0.0.0";
 
 const server = app.listen(PORT, HOST, () => {
   console.log(`Contact server listening on http://${HOST}:${PORT}`);
